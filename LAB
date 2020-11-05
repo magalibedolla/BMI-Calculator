@@ -1,0 +1,53 @@
+          /*
+Programmer: Magali Bedolla
+Program Name: BMI Calculator.cpp
+Date: 11/5/2020
+Version:2.3
+Description: This program calculates the BMI of the person and outputs f they are underweight, overweight or have an optimal weight.
+*/
+
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+
+using namespace std;
+
+int main()
+{
+	//declaration section
+	double weight;
+	double height;
+	double BMI;
+
+	//Input section
+	cout << "Please enter your weight in lbs:";
+	cin >> weight;
+	cout << "Please enter your height in inches: ";
+	cin >> height;
+
+	//Calculation Section
+	BMI = (weight * 703) / (pow (height,2));
+	cout <<"Your BMI is: " << setprecision(1)<<fixed << BMI << endl;
+
+	//Output Section
+	// If the BMI is less than 18.5 it will say they are underweight
+	if (BMI < 18.5)
+	{
+		cout << "You are underweight.";
+	}
+
+	// If the BMI is between 18.5 and 25 then the program will say they have an optimal weight
+	else if(BMI >= 18.5 && BMI <= 25)
+	{
+		cout << "You are at an optimal weight.";
+	}
+	
+	//If the BMI is higher than 25 the output will say they are overweight.
+	else if(BMI > 25)
+	{
+		cout << "You are overweight.";
+	}
+
+	return 0;
+
+}
